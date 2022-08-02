@@ -41,8 +41,7 @@ def wsgi_resource():
     # Allow Ctrl-C to get you out cleanly:
     reactor.addSystemEventTrigger('after', 'shutdown', pool.stop)
     handler = StaticFilesHandler(get_internal_wsgi_application())
-    wsgi_resource = wsgi.WSGIResource(reactor, pool, handler)
-    return wsgi_resource
+    return wsgi.WSGIResource(reactor, pool, handler)
 
 
 class Command(BaseCommand):
